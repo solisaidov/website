@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Soli Saidov — Portfolio</title>
+  <meta name="description" content="Soli Saidov — Student at Vilnius Tech. Working in a Tashkent restaurant. Portfolio & contact."/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+
+<body>
+  <!-- Top nav (Craftivo-like) -->
+  <header class="top" role="banner">
+    <div class="wrap top-inner">
+      <a class="logo" href="#main" data-go="main" aria-label="Go to main">
+        <span class="logo-mark"></span><span class="logo-text">Soli</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="navlink active" data-go="main" type="button">Main</button>
+        <button class="navlink" data-go="portfolio" type="button">Portfolio</button>
+        <button class="navlink" data-go="contact" type="button">Contact</button>
+        <span class="nav-indicator" aria-hidden="true"></span>
+      </nav>
+
+      <div class="top-actions">
+        <button class="iconbtn" id="hintBtn" type="button" aria-label="Help">
+          ?
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slider pages: Contact (left) ← Main (center) → Portfolio (right) -->
+  <main class="viewport" aria-label="Pages">
+    <section class="rail" id="rail" aria-live="polite">
+      <!-- CONTACT -->
+      <article class="page contact" data-page="contact">
+        <div class="wrap page-inner">
+          <div class="page-title">
+            <p class="kicker">Contact</p>
+            <h2>Send a message</h2>
+            <p class="muted">This is a demo form — it shows success locally (no real sending yet).</p>
+          </div>
+
+          <div class="grid contact-grid">
+            <div class="panel">
+              <h3 class="panel-title">Info</h3>
+              <div class="kv">
+                <div class="kv-row"><span class="k">Name</span><span class="v">Soli Saidov</span></div>
+                <div class="kv-row"><span class="k">Role</span><span class="v">Student at Vilnius Tech</span></div>
+                <div class="kv-row"><span class="k">Work</span><span class="v">Working in a Tashkent restaurant</span></div>
+              </div>
+              <div class="divider"></div>
+              <p class="muted small">Tip: replace with your real email/phone when ready.</p>
+            </div>
+
+            <form class="panel form" id="contactForm">
+              <h3 class="panel-title">Form</h3>
+
+              <div class="fields two">
+                <label>
+                  <span>Name</span>
+                  <input required name="name" placeholder="Name"/>
+                </label>
+                <label>
+                  <span>Surname</span>
+                  <input required name="surname" placeholder="Surname"/>
+                </label>
+              </div>
+
+              <div class="fields two">
+                <label>
+                  <span>Email</span>
+                  <input required type="email" name="email" placeholder="you@email.com"/>
+                </label>
+                <label>
+                  <span>Phone</span>
+                  <input type="tel" name="phone" placeholder="+370 ..."/>
+                </label>
+              </div>
+
+              <label class="fields">
+                <span>Message</span>
+                <textarea required name="message" rows="5" placeholder="Tell me what you need..."></textarea>
+              </label>
+
+              <div class="form-foot">
+                <button class="btn primary" type="submit">Send</button>
+                <span id="formMsg" class="muted small" role="status"></span>
+              </div>
+            </form>
+          </div>
+
+          <div class="page-foot">
+            <button class="btn ghost" data-go="main" type="button">→ Back to Main</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- MAIN -->
+      <article class="page main" data-page="main">
+        <div class="main-vert" id="mainVert">
+          <!-- Screen 1: Hero -->
+          <section class="main-screen snap" aria-label="Main hero">
+            <div class="main-split">
+              <div class="photo" aria-label="Black and white portrait"></div>
+
+              <div class="wrap main-copy">
+                <p class="kicker">Student • Vilnius Tech</p>
+                <h1>Soli Saidov</h1>
+                <p class="lead muted">
+                  Student at Vilnius Tech<br/>
+                  Working in a Tashkent restaurant<br/>
+                  <span class="skills">Coding: C++, HTML, CSS, JavaScript</span>
+                </p>
+
+                <div class="chips">
+                  <span class="chip">AI Systems</span>
+                  <span class="chip">Python</span>
+                  <span class="chip">Projects</span>
+                </div>
+
+                <div class="cta">
+                  <button class="btn primary" data-go="portfolio" type="button">Portfolio →</button>
+                  <button class="btn ghost" data-go="contact" type="button">← Contact</button>
+                  <button class="btn ghost down" id="toMusic" type="button">↓ Music</button>
+                  <button class="btn ghost down" id="toVideos" type="button">↓ Funny videos</button>
+                </div>
+
+                <div class="hint muted small">
+                  Use the top navigation or swipe/drag horizontally.
+                  <span class="kbd">←</span> Contact • <span class="kbd">→</span> Portfolio • <span class="kbd">Home</span> Main
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Screen 2: Music player (slides below) -->
+          <section class="music-screen snap" id="music" aria-label="Music player">
+            <div class="music-bg" aria-hidden="true"></div>
+
+            <div class="music-center">
+              <div class="cover" aria-hidden="true">
+                <div class="note">♪</div>
+              </div>
+
+              <h2 class="track-title">Max Verstappen Meme Song</h2>
+              <div class="track-sub muted">Soli’s player</div>
+
+              <div class="big-player">
+                <button class="playbig" id="playBig" type="button" aria-label="Play / pause">▶</button>
+                <div class="wave" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="time muted" id="timeBig">00:00–00:00</div>
+              </div>
+
+              <button class="btn ghost up" id="toHero" type="button">↑ Back</button>
+            </div>
+
+            <!-- Bottom bar (like audio.com) -->
+            <div class="mini-bar" role="group" aria-label="Mini player">
+              <div class="mini-left">
+                <button class="mini-play" id="miniPlay" type="button" aria-label="Play / pause">▶</button>
+                <div class="mini-meta">
+                  <div class="mini-name">Max Verstappen Meme Song</div>
+                  <div class="mini-artist muted small">Local audio</div>
+                </div>
+              </div>
+
+              <div class="mini-mid">
+                <span class="muted small" id="tCur">00:00</span>
+                <input class="seek" id="seek" type="range" min="0" max="100" value="0" aria-label="Seek"/>
+                <span class="muted small" id="tDur">00:00</span>
+              </div>
+
+              <div class="mini-right">
+                <span class="muted small">🔊</span>
+                <input class="vol" id="vol" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume"/>
+                <button class="hq" type="button" aria-label="High quality">HIGH‑QUALITY</button>
+              </div>
+            </div>
+
+            <audio id="audio"></audio>
+          </section>
+
+          
+          <!-- Screen 3: Memory Game (slides below music) -->
+          <section class="game-screen snap" id="game" aria-label="Memory game">
+            <div class="wrap mem">
+              <div class="mem-head">
+                <h2 class="mem-title">Memory Game</h2>
+                <p class="muted mem-sub">Flip cards and find all matching pairs.</p>
+              </div>
+
+              <div class="mem-top">
+                <div class="mem-controls panel2">
+                  <label class="mem-label">
+                    <span class="muted small">Difficulty</span>
+                    <select id="mgDifficulty" class="mem-select">
+                      <option value="easy">Easy (4×3)</option>
+                      <option value="medium">Medium (4×4)</option>
+                      <option value="hard">Hard (6×4)</option>
+                    </select>
+                  </label>
+
+                  <div class="mem-btns">
+                    <button class="btn primary" id="mgStart" type="button">Start</button>
+                    <button class="btn ghost" id="mgPause" type="button" disabled>Pause</button>
+                    <button class="btn ghost" id="mgRestart" type="button">Restart</button>
+                  </div>
+                </div>
+
+                <div class="mem-stats panel2">
+                  <div class="stat">
+                    <div class="muted small">Moves</div>
+                    <div class="stat-val" id="mgMoves">0</div>
+                  </div>
+                  <div class="stat">
+                    <div class="muted small">Matches</div>
+                    <div class="stat-val"><span id="mgMatches">0</span>/<span id="mgTotalPairs">0</span></div>
+                  </div>
+                  <div class="stat">
+                    <div class="muted small">Time</div>
+                    <div class="stat-val" id="mgTime">00:00</div>
+                  </div>
+                  <div class="stat best">
+                    <div class="muted small">Best</div>
+                    <div class="stat-val" id="mgBest">—</div>
+                  </div>
+                  <div class="win" id="mgWin" aria-live="polite">You won!</div>
+                </div>
+              </div>
+
+              <div class="mem-board panel2">
+                <div class="mem-grid" id="mgGrid" aria-label="Cards grid"></div>
+              </div>
+
+              <div class="page-foot">
+                <button class="btn ghost up" id="toMusic2" type="button">↑ Back to Music</button>
+                <button class="btn ghost down" id="toVideos2" type="button">↓ Funny videos</button>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- Screen 4: Funny Videos (only from Main button) -->
+          <section class="video-screen snap" id="videos" aria-label="Funny videos">
+            <div class="video-inner wrap">
+              <p class="kicker">Funny Videos</p>
+              <h2 class="video-title">A few clips I like</h2>
+              <p class="muted video-desc">
+                One video is stored locally (works offline). The others are embedded from YouTube.
+                You can replace them anytime.
+              </p>
+
+              <div class="video-grid">
+                <div class="video-card">
+                  <div class="video-head">
+                    <div class="vh-title">Local video</div>
+                    <div class="vh-sub muted small">Plays from the downloaded file</div>
+                  </div>
+                  <video class="vid" controls playsinline preload="metadata" src="media/local-video.mp4"></video>
+                </div>
+
+                <div class="video-card">
+                  <div class="video-head">
+                    <div class="vh-title">YouTube videos</div>
+                    <div class="vh-sub muted small">Embedded players</div>
+                  </div>
+                  <div class="yt-grid">
+                    <div class="yt">
+                      <iframe src="https://www.youtube-nocookie.com/embed/xvVzFJK6JaU" title="YouTube video 1"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                    <div class="yt">
+                      <iframe src="https://www.youtube-nocookie.com/embed/7QJ-N-AQJYc" title="YouTube video 2"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                    <div class="yt">
+                      <iframe src="https://www.youtube-nocookie.com/embed/l5HnxPwFEys" title="YouTube video 3"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                    <div class="yt">
+                      <iframe src="https://www.youtube-nocookie.com/embed/6D29vjegWIM" title="YouTube video 4"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="video-foot">
+                <button class="btn ghost up" id="toHero2" type="button">↑ Back to Main</button>
+                <button class="btn ghost up" id="toGame2" type="button">↑ Back to Game</button>
+              </div>
+            </div>
+          </section>
+
+
+        </div>
+</article>
+
+      <!-- PORTFOLIO -->
+      <article class="page portfolio" data-page="portfolio">
+        <div class="wrap page-inner">
+          <div class="page-title">
+            <p class="kicker">Portfolio</p>
+            <h2>Selected work</h2>
+            <p class="muted">Replace cards with your real projects. Click any card to preview (demo).</p>
+          </div>
+
+          <div class="filters" role="group" aria-label="Portfolio filters">
+            <button class="pill active" data-filter="all" type="button">All</button>
+            <button class="pill" data-filter="ai" type="button">AI</button>
+            <button class="pill" data-filter="iot" type="button">IoT</button>
+            <button class="pill" data-filter="telecom" type="button">Telecom</button>
+          </div>
+
+          <div class="cards" id="cards">
+            <button class="card" data-cat="ai" data-open="Project: Article Categorization System" type="button">
+              <div class="card-top">
+                <span class="tag">AI</span><span class="tag">Python</span>
+              </div>
+              <div class="card-title">Article Categorization System</div>
+              <div class="card-text muted">Terminal app for categorization + search with AI features.</div>
+              <div class="card-foot">Open →</div>
+            </button>
+
+            <button class="card" data-cat="iot" data-open="Project: Smart Devices Labs" type="button">
+              <div class="card-top">
+                <span class="tag">IoT</span><span class="tag">Arduino</span>
+              </div>
+              <div class="card-title">Smart Devices Labs</div>
+              <div class="card-text muted">Sensors, logging, EEPROM, networking experiments.</div>
+              <div class="card-foot">Open →</div>
+            </button>
+
+            <button class="card" data-cat="telecom" data-open="Project: NAT & VLAN Labs" type="button">
+              <div class="card-top">
+                <span class="tag">Telecom</span><span class="tag">Cisco</span>
+              </div>
+              <div class="card-title">NAT & VLAN Labs</div>
+              <div class="card-text muted">Routing, DHCP, NAT + Wireshark analysis.</div>
+              <div class="card-foot">Open →</div>
+            </button>
+
+            <button class="card" data-cat="ai" data-open="Project: Regression Models" type="button">
+              <div class="card-top">
+                <span class="tag">ML</span><span class="tag">Regression</span>
+              </div>
+              <div class="card-title">Regression Models</div>
+              <div class="card-text muted">Compare linear/tree/neural models with metrics.</div>
+              <div class="card-foot">Open →</div>
+            </button>
+          </div>
+
+          <div class="page-foot">
+            <button class="btn ghost" data-go="main" type="button">← Back to Main</button>
+            <button class="btn primary" data-go="contact" type="button">Contact</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="bottom" role="contentinfo">
+    <div class="wrap bottom-inner">
+      <span class="muted small">© <span id="year"></span> Soli Saidov</span>
+      <div class="dots" aria-label="Page position">
+        <button class="dot active" data-go="contact" aria-label="Go to Contact" type="button"></button>
+        <button class="dot active2" data-go="main" aria-label="Go to Main" type="button"></button>
+        <button class="dot" data-go="portfolio" aria-label="Go to Portfolio" type="button"></button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal (Craftivo-ish quick preview) -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Preview">
+      <button class="modal-close" data-close="1" aria-label="Close" type="button">×</button>
+      <div class="modal-title" id="modalTitle">Preview</div>
+      <div class="modal-body muted" id="modalBody"></div>
+      <div class="modal-foot">
+        <button class="btn ghost" data-close="1" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/player.js"></script>
+  <script src="assets/js/game.js"></script>
+  <script src="assets/js/videos.js"></script>
+  <script src="assets/js/player.js"></script>
+  <script src="assets/js/game.js"></script>
+  <script src="assets/js/videos.js"></script>
+</body>
+</html>
